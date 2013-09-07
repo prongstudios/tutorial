@@ -1,5 +1,10 @@
+require "gosu"
+
 class Tutorial
 	def start
+		$stderr.reopen("tutorial_err.txt", "w")
+		@song = Gosu::Sample.new("../TutorialMenu.ogg")
+		@song.play(1,1,true)
 		name_menu = Menu.new
 		name_menu.add "Rumplestilskin"
 		name_menu.add "Beetlejuice"
