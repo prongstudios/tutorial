@@ -6,9 +6,9 @@ class Tutorial
 		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
 		name_menu = Menu.new
-		name_menu.add "Rumplestilskin"
-		name_menu.add "Beetlejuice"
-		name_menu.add "Bosie"
+		name_menu.add_option "Rumplestilskin"
+		name_menu.add_option "Beetlejuice"
+		name_menu.add_option "Bosie"
 		case name_menu.prompt
 		when 1
 			rump_menu = Menu.new
@@ -27,8 +27,8 @@ class Menu
 		@prompt = prompt
 		@sounds = File.join(File.dirname(__FILE__), '..', 'sounds')
 	end
-	def add_options(new_options)
-		@options.push new_options
+	def add_option(new_option)
+		@options.push new_option
 	end
 	def add_prompt(new_prompt)
 		@prompt.push new_prompt
