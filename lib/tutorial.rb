@@ -3,7 +3,7 @@ require "gosu"
 class Tutorial
 	def start
 		$stderr.reopen("tutorial_err.txt", "w")
-		@song = Gosu::Sample.new("../TutorialMenu.ogg")
+		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
 		name_menu = Menu.new
 		name_menu.add "Rumplestilskin"
@@ -16,6 +16,7 @@ end
 class Menu
 	def initialize(prompt = [])
 		@prompt = prompt
+		@sounds = File.join(File.dirname(__FILE__), '..', 'sounds')
 	end
 	def add(new_prompt)
 		@prompt.push new_prompt

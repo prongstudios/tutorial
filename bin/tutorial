@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$ASSET_PATH = (File.join(File.dirname(__FILE__), '..', 'assets'))
 require 'tutorial'
 
 game = Tutorial.new
