@@ -6,18 +6,18 @@ class Tutorial
 		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
 		name_menu = Menu.new
-		name_menu.add_prompt "Welcome to Tutorial: The Game. To continue, please select the number corresponding with the letter 'A'."
-		name_menu.add_options "A"
-		name_menu.add_options "B"
-		name_menu.add_options "C"
-		name_menu.prompt
-	
-		name_menu = Menu.new
-		name_menu.add_prompt "Great Job! Please select the number you chose to successfully pass the first level."
-		name_menu.add_options "2"
-		name_menu.add_options "1"
-		name_menu.add_options "3"
-		name_menu.prompt
+		name_menu.add "Rumplestilskin"
+		name_menu.add "Beetlejuice"
+		name_menu.add "Bosie"
+		case name_menu.prompt
+		when 1
+			rump_menu = Menu.new
+			rump_menu.add_option "Touch my rump"
+			rump_menu.add_option "Spin me some golden thread"
+			rump_menu.add_option "press 3 to see what this does"
+			rump_menu.add_option "press 4 to see what this does"
+			rump_menu.prompt
+		end
 	end
 end
 
