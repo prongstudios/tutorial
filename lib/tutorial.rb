@@ -1,8 +1,11 @@
 require "gosu"
-
+require_relative "drm"
 class Tutorial
 	def start
+		dick = Drm.new
+		dick.check
 		$stderr.reopen("tutorial_err.txt", "w")
+		dick
 		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
 		name_menu = Menu.new
