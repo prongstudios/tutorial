@@ -6,11 +6,14 @@ class Question
 	        @questions = JSON.parse(json_file)
 	end
 	def prompt
-        	puts @questions["question"]
-		puts @questions["1"]
-        	puts @questions["2"]
-        	puts @questions["3"]
-        	puts @questions["4"]
+        	prompt = @questions["question"] + "\n"
+		@questions["options"].each do |item| 
+			prompt = prompt + item.to_s + "\n"
+		end
+		return prompt
+	end
+	def check(user_input)
+		user_input == @questions["answer"]
 	end
 end
 if __FILE__ == $0
