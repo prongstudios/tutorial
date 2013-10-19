@@ -2,11 +2,10 @@ require 'rest-client'
 class Drm
 	def check
 		begin
-			RestClient.get('http://tutorialthegame.com/drm')
-			puts 'drm connected'
+			RestClient.get('http://tutorialthegame.com/xdrm')
+			return 'drm connected'
 		rescue Exception => e
-			puts 'error checking drm'
-			puts e.message
+			return 'error checking drm: ' + e.message
 		end
 	end
 end
