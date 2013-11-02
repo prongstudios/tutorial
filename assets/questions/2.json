@@ -1,9 +1,9 @@
 {
 "options":[
-    {"1": "A. 1"},
-    {"2": "B. 2"},
-    {"3": "C. 3"},
-    {"4": "D. 4"}],
+    {"A": "1",
+    "B": "2",
+    "C": "3",
+    "D": "4"}],
     "question": "Great job! Now choose the letter corresponding to the number 1. Then press enter.",
     "answer": "A"
 }
