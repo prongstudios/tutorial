@@ -1,9 +1,16 @@
 GEM
+  remote: https://rubygems.org/
   specs:
-    gosu (0.7.48)
+    gosu (0.7.49)
+    mime-types (2.0)
+    progressbar (0.21.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   gosu
+  progressbar
+  rest-client

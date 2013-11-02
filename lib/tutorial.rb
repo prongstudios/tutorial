@@ -3,7 +3,7 @@ require "progressbar"
 require_relative "drm"
 require_relative "questions"
 class Tutorial
-	def start
+	def initialize
 		dick = Drm.new
 		puts dick.check
 		ptime = rand(200)
@@ -21,6 +21,8 @@ class Tutorial
 		$stderr.reopen("tutorial_err.txt", "w")
 		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
+	end
+	def start
 		dir = Dir.entries("assets/questions").reject{|entry| entry =~ /^\.{1,2}$/}
 		dir.each do |test|
 			q = Question.new "assets/questions/#{test}"
