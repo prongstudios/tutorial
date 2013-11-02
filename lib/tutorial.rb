@@ -4,6 +4,9 @@ class Tutorial
 	def start
 		dick = Drm.new
 		puts dick.check
+		unless dick.success
+			exit
+		end
 		$stderr.reopen("tutorial_err.txt", "w")
 		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
