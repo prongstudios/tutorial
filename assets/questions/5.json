@@ -1,0 +1,10 @@
+{
+"options":[
+    {"1": "I hate you.",
+    "3": "Why have you done this to me?!",
+    "5": "Where am I?",
+    "7": "Well hello there, princess!",
+    "11": "I hate myself."}],
+    "question": "Great job! Princess Albequerkee saw you and wants to say hi! Press 7 to say hello!",
+    "answer": "7"
+}
