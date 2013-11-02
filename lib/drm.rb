@@ -1,9 +1,10 @@
 require 'rest-client'
+require 'json'
 class Drm
 	def check
 		begin
-			RestClient.get('http://tutorialthegame.com/pages/drm')
-			return 'drm connected'
+			response = RestClient.get 'http://tutorialthegame.com/pages/drm.json', {:accept => :json}
+			return JSON.parse(response)["status"]
 		rescue Exception => e
 			return 'error checking drm: ' + e.message
 		end
