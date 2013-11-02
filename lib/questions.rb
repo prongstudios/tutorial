@@ -7,8 +7,10 @@ class Question
 	end
 	def prompt
         	prompt = @questions["question"] + "\n"
-		@questions["options"].each do |item| 
-			prompt = prompt + item.to_s + "\n"
+		@questions["options"].each do |item|
+					item.each_pair do |key, value|
+						prompt = prompt + "#{key}. #{value} \n"
+						end
 		end
 		return prompt
 	end

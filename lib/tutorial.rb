@@ -1,5 +1,6 @@
 require "gosu"
 require_relative "drm"
+require_relative "questions"
 class Tutorial
 	def start
 		dick = Drm.new
