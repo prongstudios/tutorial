@@ -30,6 +30,7 @@ class Tutorial
 			unless q.check(gets.chomp)
 				puts "You have failed your quest and must start again."
 				start
+				exit
 			end
 		end
 		puts "You arrive at the base of Mt. Tortalialis. To continue your adventure, purchase our DLC."
