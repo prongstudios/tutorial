@@ -1,9 +1,22 @@
 require "gosu"
+require "progressbar"
 require_relative "drm"
 class Tutorial
 	def start
 		dick = Drm.new
 		puts dick.check
+		ptime = rand(200)
+		puts "Loading progress bars!"
+		pbar = ProgressBar.new("Waiting", ptime)
+		ptime.times {sleep(0.1); pbar.inc}; pbar.finish
+		prog = IO.readlines("#{$ASSET_PATH}/loading.txt")
+		prog.shuffle!
+		rand(6).times do
+			puts prog.pop
+			ptime = rand(100)
+			pbar = ProgressBar.new("Waiting", ptime)
+			ptime.times {sleep(rand); pbar.inc}; pbar.finish
+		end
 		$stderr.reopen("tutorial_err.txt", "w")
 		@song = Gosu::Sample.new("#{$ASSET_PATH}/TutorialMenu.ogg")
 		@song.play(1,1,true)
