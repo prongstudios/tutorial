@@ -3,7 +3,7 @@ require 'json'
 class Drm
 	def check
 		begin
-			@response = RestClient.get 'http://tutorialthegame.com/pages/drm.json', {:accept => :json}
+			@response = RestClient.get 'http://tutorialthegame.prongstudios.com/pages/drm.json', {:accept => :json}
 			return JSON.parse(@response)["status"]
 		rescue Exception => e
 			return 'error checking drm: ' + e.message
